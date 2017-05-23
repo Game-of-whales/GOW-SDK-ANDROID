@@ -8,6 +8,8 @@ Game Of Whales Android Native SDK.
 [ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://bintray.com/gameofwhales/maven/sdk/_latestVersion)
 
 
+## Changelog
+
 **1.0.1**
 * SDK for Android Native
 
