@@ -1,0 +1,168 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.1'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+    }
+}
+
+plugins {
+    id "com.jfrog.bintray" version "1.5"
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'com.android.library'
+    apply plugin: 'com.github.dcendents.android-maven'
+}
+
+
+
+group = 'com.gameofwhales'
+version = '1.0.1'
+
+def siteUrl = 'https://gameofwhales.com'
+def gitUrl = ''
+def gowVersion = version
+def gowDesc = "Game of Whales is a real-time monetization optimization platform, that provides sophisticated user analysis + campaign management in one easy-to-use, FREE platform"
+def gowName = "Game of Whales: Android Native SDK"
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 16
+        versionCode 1
+        versionName gowVersion
+    }
+
+    buildTypes {
+        release {
+        }
+        debug {
+
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.firebase:firebase-ads:9.6.0'
+}
+
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+                name gowName
+                description gowDesc
+                url siteUrl
+                inceptionYear '2017'
+
+                packaging 'aar'
+                groupId 'com.gameofwhales'
+                artifactId 'sdk'
+                version gowVersion
+
+                licenses {
+                    license {
+                        name 'MIT'
+                        url 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'zendorx'
+                        name 'Sachkov Denis'
+                        email 'contactus@gameofwhales.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/Game-of-whales/GOW-SDK-ANDROID.git'
+                    developerConnection 'https://github.com/Game-of-whales/GOW-SDK-ANDROID.git'
+                    url siteUrl
+
+                }
+            }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'sdk'
+        desc = 'Game of Whales Desc'
+        userOrg = "gameofwhales"
+        licenses = ['MIT']
+        vcsUrl = gitUrl
+        version {
+            name = 'sdk'
+            desc = 'Package desc'
+            vcsTag = gowVersion
+        }
+    }
+}
+
+//DO NOT DELETE
+/*
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}*/
+
+/*artifacts {
+    //archives javadocJar
+    //archives sourcesJar
+}*/
+
+task deleteAll(type: Delete) {
+    delete 'release'
+    outputs.upToDateWhen { false }
+}
+
+/*task exportJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('release/')
+    include('classes.jar')
+    rename('classes.jar', 'com.gameofwhales.sdk-' + android.defaultConfig.versionName + '.jar')
+    outputs.upToDateWhen { false }
+}*/
+
+task exportAAR(type: Copy) {
+
+    outputs.upToDateWhen { return false }
+    from('build/outputs/aar/')
+    into('release/')
+    include('sdk-release.aar')
+    rename('sdk-release.aar', 'com.gameofwhales.sdk-' + android.defaultConfig.versionName + '.aar')
+
+}
+
+build.finalizedBy deleteAll
+build.finalizedBy exportAAR
+//build.finalizedBy exportJar
+
