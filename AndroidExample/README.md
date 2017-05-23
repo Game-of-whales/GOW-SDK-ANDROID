@@ -1,5 +1,5 @@
-#Game of whales Android native example
+# Game of whales Android native example
 
-1. Replace gameOfWhales.gameId in app/src/main/AndroidManifest.xml with your GOW GameKey
+1. You should replace gameOfWhales.gameId in app/src/main/AndroidManifest.xml with your GOW's Game Key.
 
-2. Replace google-services.json
+2. You should replace google-services.json with yuors.
