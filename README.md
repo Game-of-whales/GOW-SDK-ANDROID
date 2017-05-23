@@ -1,19 +1,6 @@
-# GOW-SDK-ANDROID
-Game Of Whales Android Native SDK.
-
-<p align=center>
-<img src=http://gameofwhales.com/static/images/landing/logo-right.png>
-</p>
+## GOW-SDK-ANDROID
 
 [ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://bintray.com/gameofwhales/maven/sdk/_latestVersion)
-
-
-## Changelog
-
-**1.0.1**
-* SDK for Android Native
-
-
 
 ## Implementation guide
 
