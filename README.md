@@ -84,7 +84,7 @@ int response = details.getInt("RESPONSE_CODE");
 if (response == 0)
 {
      // GoW_call DetailsReceived()
-     GameOfWhales.DetailsReceived(data);
+     GameOfWhales.DetailsReceived(details);
 }
 ```
 
