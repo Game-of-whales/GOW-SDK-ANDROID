@@ -62,7 +62,7 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
 
         @Override
         public void onNeedRequestDetails(ArrayList<String> skus) {
-            //TODO: request details for sku from massive 
+            //TODO: request details for sku from array 
         }
 
     };
