@@ -163,6 +163,7 @@ Check that the following library have been added to your Android project in grad
 	compile 'com.google.android.gms:play-services-gcm:xxx'
 ```
 
+> You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
 
 Run your game. The information about it began to be collected and displayed on the [dashboard](http://gameofwhales.com/documentation/dashboard). In a few days, you will get data for analyzing.
 
