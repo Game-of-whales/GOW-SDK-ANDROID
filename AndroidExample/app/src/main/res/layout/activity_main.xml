@@ -1,74 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gameofwhales.gow.MainActivity">
-
-    <LinearLayout
+    tools:context=".MainActivity">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
-
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="314dp"
-            android:layout_height="154dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0.06"
-            android:src="@drawable/gowlogo">
-        </ImageView>
-
-        <Button
-            android:id="@+id/button1"
+        android:layout_height="match_parent">
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pagerTitleStrip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-             />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-             />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-             />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-             />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            />
-    </LinearLayout>
-x
-
-</android.support.design.widget.CoordinatorLayout>
+            android:layout_gravity="top">
+        </android.support.v4.view.PagerTitleStrip>
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>

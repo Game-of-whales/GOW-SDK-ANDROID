@@ -1,4 +1,4 @@
-package com.gameofwhales.gow;
+package com.gameofwhales.gow.base;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.gameofwhales.gow.views.BankFragment.BILLING_REQUEST_CODE;
+
 public class AppBilling {
 
     private static String TAG = "Test.GOW.AppBilling";
@@ -29,12 +31,19 @@ public class AppBilling {
     private static String SERVICE_PACKAGE = "com.android.vending";
     private static String BUY_INTENT = "BUY_INTENT";
 
+    public static AppBilling instance;
+
     private String payload = "bGoa+V7g/yqDXvKRqq+JTFn4uQZbPiQJo4pf9RzJ";
     private AppBillingListener listener;
     private Activity activity;
 
     IInAppBillingService service;
     ServiceConnection serviceConn;
+
+    public static void Init(Activity activity, final AppBillingListener listener)
+    {
+        instance = new AppBilling(activity, listener);
+    }
 
     public class ItemData
     {
@@ -54,12 +63,12 @@ public class AppBilling {
     }
 
 
-    public ItemData getDetail(String sku)
+    public ItemData getDetail(final String sku)
     {
-        if (!prices.containsValue(sku))
+        /*if (!prices.containsValue(sku))
         {
             return null;
-        }
+        }*/
 
         return prices.get(sku);
     }
@@ -73,12 +82,22 @@ public class AppBilling {
         try
         {
             ArrayList<ItemData> newDetails = new ArrayList<>();
-            for(String item : detailsList)
+            for(final String item : detailsList)
             {
+                //Example:
+                // {"productId":"product_10",
+                // "type":"inapp",
+                // "price":"599,00 ₽",
+                // "price_amount_micros":599000000,
+                // "price_currency_code":"RUB",
+                // "title":"product 10 (Game of whales)",
+                // "description":"product for 10USD"}
+
+                //Storing data
                 JSONObject json = new JSONObject(item);
                 Log.i(TAG, "OnNewDetails: " + json.toString());
 
-                String sku = json.getString("productId");
+                final String sku = json.getString("productId");
 
                 ItemData itemData = new ItemData();
                 itemData.id = sku;
@@ -100,7 +119,7 @@ public class AppBilling {
         }
     }
 
-    public AppBilling(Activity activity, final AppBillingListener listener)
+    private AppBilling(Activity activity, final AppBillingListener listener)
     {
         this.activity = activity;
         this.listener = listener;
@@ -127,6 +146,9 @@ public class AppBilling {
                     listener.onServiceConnected();
 
                 consumeAllPurchases();
+
+                //TODO: requestDetails();
+
             }
         };
 
@@ -156,7 +178,7 @@ public class AppBilling {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == MainActivity.BILLING_REQUEST_CODE) {
+        if (requestCode == BILLING_REQUEST_CODE) {
             if (resultCode != Activity.RESULT_OK)
                 return;
 
@@ -219,7 +241,7 @@ public class AppBilling {
                     }
 
                     activity.startIntentSenderForResult(pendingIntent.getIntentSender(),
-                            MainActivity.BILLING_REQUEST_CODE,
+                            BILLING_REQUEST_CODE,
                             new Intent(),
                             Integer.valueOf(0),
                             Integer.valueOf(0),

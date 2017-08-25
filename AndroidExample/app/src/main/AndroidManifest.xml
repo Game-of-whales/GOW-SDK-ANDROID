@@ -19,28 +19,22 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.gameofwhales.gow.MessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
 
-        <service
-            android:name=".InstanceIDService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
 
-        <meta-data android:name="gameOfWhales.gameId" android:value="YOUR_GAMEKEY" />
+        <meta-data android:name="gameOfWhales.gameId" android:value="58ff3e2e30bb6d070389ef0f" />
 
+    <receiver
+        android:name="com.gameofwhales.sdk.util.GOWBroadcastReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <category android:name="${applicationId}"/>
+        </intent-filter>
+    </receiver>
 
     </application>
 
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
 </manifest>

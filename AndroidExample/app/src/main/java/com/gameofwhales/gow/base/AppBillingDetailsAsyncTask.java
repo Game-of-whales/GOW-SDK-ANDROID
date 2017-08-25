@@ -1,4 +1,4 @@
-package com.gameofwhales.gow;
+package com.gameofwhales.gow.base;
 
 import android.app.Activity;
 import android.os.AsyncTask;
