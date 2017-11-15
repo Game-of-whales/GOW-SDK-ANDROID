@@ -13,7 +13,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-        compile project('com.gameofwhales.sdk:2.0.6@aar')
+       compile 'com.gameofwhales:sdk:2.0.6@aar'
 ```
 
 ### Step 2
