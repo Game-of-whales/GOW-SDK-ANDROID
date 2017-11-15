@@ -32,7 +32,7 @@ Init _Game of Whales SDK_ in your _Activity Start_ class.
 // GoW_import
 import com.gameofwhales.sdk.GameOfWhales;
 import com.gameofwhales.sdk.GameOfWhalesListener;
-import com.gameofwhales.sdk.Replacement;
+import com.gameofwhales.sdk.SpecialOffer;
 
 ...
 @Override
