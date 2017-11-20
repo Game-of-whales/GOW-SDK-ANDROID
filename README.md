@@ -138,8 +138,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
 
 
 
-### Step 7
-Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead APP_BUNDLE.
+### Step 7 (push notifications)
+Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _ANDROID_BUNDLE_IDENTIFIER_.
 
 ```cs
      <receiver
@@ -147,7 +147,7 @@ Add a receiver to send  information about notifications to your manifest and spe
         android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-               <category android:name="APP_BUNDLE"/>
+               <category android:name="ANDROID_BUNDLE_IDENTIFIER"/>
             </intent-filter>
         </receiver>
      
