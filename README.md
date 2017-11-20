@@ -138,7 +138,24 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
 
 
 
-### Step 7 (only if push notifications are shown inside your app by using the game's code)
+### Step 7
+Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead APP_BUNDLE.
+
+```cs
+     <receiver
+        android:name="com.gameofwhales.sdk.util.GOWBroadcastReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+               <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+               <category android:name="APP_BUNDLE"/>
+            </intent-filter>
+        </receiver>
+     
+     ...
+     </application>
+```
+
+### Step 8 (only if push notifications are shown inside your app by using the game's code)
 
 In order to send the information to **Game of Whales** regarding a player's reaction on a push notification (to increase push campaign's [_Reacted_](http://www.gameofwhales.com/documentation/processing-pushes) field) of an already started app call the following method: 
 ```java
@@ -152,7 +169,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```
 
 
-### Step 8 (only if you use Google Cloud Messaging)
+### Step 9 (only if you use Google Cloud Messaging)
 Call the following method: 
 
 ```java
