@@ -38,7 +38,9 @@ public class MainActivity extends FragmentActivity{
         Log.d("MainActivity", "onCreate");
         setContentView(R.layout.activity_main);
 
-        GameOfWhales.Init(this, null);
+        final String store = GameOfWhales.STORE_GOOGLEPLAY;
+        //final String store = GameOfWhales.STORE_SAMSUNG;
+        GameOfWhales.Init(this, store, null);
 
         PlayerInfo.Init(this);
 
