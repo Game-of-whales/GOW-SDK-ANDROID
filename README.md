@@ -1,6 +1,6 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.6/com.gameofwhales.sdk-2.0.6.aar )
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
 
 
 
@@ -13,7 +13,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.6@aar'
+       compile 'com.gameofwhales:sdk:2.0.9@aar'
 ```
 
 ### Step 2
@@ -26,7 +26,7 @@ Add the following row to your _AndroidManifest.xml_ and change _GAME_ID_ to your
 ```
 
 ### Step 3
-Init _Game of Whales SDK_ in your _Activity Start_ class.
+Init _Game of Whales SDK_ in your _Activity Start_ class. 
 
 ```java
 // GoW_import
@@ -39,7 +39,9 @@ import com.gameofwhales.sdk.SpecialOffer;
     protected void onCreate(Bundle savedInstanceState) {
     ...
     // GameOfWhakes SDK initialization
-    GameOfWhales.Init(this, gowListener);
+    final String store = GameOfWhales.STORE_GOOGLEPLAY;
+    //final String store = GameOfWhales.STORE_SAMSUNG;
+    GameOfWhales.Init(this, store, gowListener);
 ```
 
 ### Step 4
