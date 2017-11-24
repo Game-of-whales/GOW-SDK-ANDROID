@@ -166,7 +166,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
       public void onPushDelivered(String campID, String title, String message) 
       {
       		//Show the notification to a player and then call the following method
-        	GameOfWhales.PushReacted(pushID);
+        	GameOfWhales.PushReacted(campID);
       }
 ```
 
