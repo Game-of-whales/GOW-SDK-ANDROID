@@ -194,7 +194,7 @@ Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the f
 	Map<String, Long> resources = new HashMap<>();
         resources.put("bike_1", 1);
 	resources.put("gas", -50);
-        resources.put("coins", -number);
+        resources.put("coins", -1000);
         GameOfWhales.Converting(resources, place);
 ```
 
