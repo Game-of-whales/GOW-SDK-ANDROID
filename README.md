@@ -182,6 +182,37 @@ Check that the following library have been added to your Android project in grad
 	compile 'com.google.android.gms:play-services-gcm:xxx'
 ```
 
+
+### Step 10 (converting)
+
+``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+
+For example:
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+
+```java
+	Map<String, Long> resources = new HashMap<>();
+        resources.put("bike_1", 1);
+	resources.put("gas", -50);
+        resources.put("coins", -number);
+        GameOfWhales.Converting(resources, place);
+```
+
+You can also use the following methods:
+
+``Consume`` - to buy items for game currency. For example:
+
+```java
+	GameOfWhales.Consume("coins", 1000, "gas", 50, "shop");
+```
+
+``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+
+```java
+	GameOfWhales.Acquire("coins", 1000, sku, 1, "bank");
+```
+
+
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
 
 Run your game. The information about it began to be collected and displayed on the [dashboard](http://gameofwhales.com/documentation/dashboard). In a few days, you will get data for analyzing.
