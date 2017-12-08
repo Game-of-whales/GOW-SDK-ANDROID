@@ -92,7 +92,7 @@ public class PlayerFragment extends Fragment implements Button.OnClickListener{
                 PlayerInfo.instance.decMoney(cost);
                 updateParametersView();
                 showToast("OK!");
-                GameOfWhales.Consume("money", cost, itemID, "shop");
+                GameOfWhales.Consume("money", cost, itemID, 1, "shop");
                 reportChanges();
             }
             else

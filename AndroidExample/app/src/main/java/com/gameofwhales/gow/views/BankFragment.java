@@ -137,7 +137,7 @@ public class BankFragment extends Fragment implements AppBillingListener, Button
 
 
         @Override
-        public void onPushDelivered(String campID, String title, String message) {
+        public void onPushDelivered(SpecialOffer specialOffer, String campID, String title, String message) {
             //show message and send reacted
             showDialog(getActivity().getApplicationContext(), campID, title, message);
         }
