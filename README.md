@@ -1,6 +1,22 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.10/com.gameofwhales.sdk-2.0.10.aar )
+
+
+# Changelog
+### 2.0.10
+
+MODIFIED
+* Push notification about special offer comes at the same time with the special offer (a new parameter was added):
+``void onPushDelivered(SpecialOffer offer, String campID, String title, String message);``
+
+* ``setPushNotificationsEnable`` method was added to allow user to turn off the push notifications.
+
+
+### 2.0.9
+
+MODIFIED
+* _store_ parameter was added to initializing.
 
 
 
@@ -13,7 +29,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.9@aar'
+       compile 'com.gameofwhales:sdk:2.0.10@aar'
 ```
 
 ### Step 2
@@ -64,7 +80,7 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
 
 
         @Override
-        public void onPushDelivered(String campID, String title, String message) 
+        public void onPushDelivered(SpecialOffer offer, String campID, String title, String message) 
         {
            //It's called to show notification in opened game.
         }
@@ -163,7 +179,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```java
       
       @Override
-      public void onPushDelivered(String campID, String title, String message) 
+      public void onPushDelivered(SpecialOffer offer, String campID, String title, String message) 
       {
       		//Show the notification to a player and then call the following method
         	GameOfWhales.PushReacted(campID);
@@ -183,7 +199,22 @@ Check that the following library have been added to your Android project in grad
 ```
 
 
-### Step 10 (converting)
+### Step 10 (profiles) 
+
+``Profile`` method should be called if key parameters of your app or a player have changed.
+
+For example:
+
+```java
+	HashMap<String, Object> changes = new HashMap<>();
+        changes.put("class", getUserClass());
+        changes.put("gender", Boolean.valueOf(getGender()));
+        changes.put("location", getLocation());
+        changes.put("level", getLevel());
+        GameOfWhales.Profile(changes);
+```
+
+### Step 11 (converting)
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
