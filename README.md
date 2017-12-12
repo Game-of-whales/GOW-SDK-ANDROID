@@ -3,6 +3,22 @@ Game of whales Android Native SDK
 [ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
 
 
+# Changelog
+### 2.0.10
+
+MODIFIED
+* Push notification about special offer comes at the same time with the special offer (new parameter _offer_ was added):
+``void onPushDelivered(SpecialOffer offer, String campID, String title, String message);``
+
+* ``setPushNotificationsEnable`` method was added to allow user to turn off the push notifications.
+
+
+### 2.0.9
+
+MODIFIED
+* _store_ parameter was added to initializing.
+
+
 
 # Implementation Guide
 
@@ -183,7 +199,22 @@ Check that the following library have been added to your Android project in grad
 ```
 
 
-### Step 10 (converting)
+### Step 10 (profiles) 
+
+``Profile`` method should be called if key parameters of your app or a player have changed.
+
+For example:
+
+```java
+	HashMap<String, Object> changes = new HashMap<>();
+        changes.put("class", getUserClass());
+        changes.put("gender", Boolean.valueOf(getGender()));
+        changes.put("location", getLocation());
+        changes.put("level", getLevel());
+        GameOfWhales.Profile(changes);
+```
+
+### Step 11 (converting)
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
