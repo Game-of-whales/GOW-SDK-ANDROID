@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IAP4.0 Sample Application</string>
+	<string name="items_inbox_list_is_empty">Items inbox list is empty</string>
+	<string name="item_type">Item Type : </string>
+	<string name="item_list_is_empty">Item list is empty</string>
+	<string name="load_item_list">Load Item List</string>
+	<string name="null_string"></string>
+	<string name="load_items_inbox_list">Load Items Inbox List</string>
+    <string name="load_cached_items_inbox_list">Load Cached Items Inbox List</string>
+	<string name="purchase_one_item">Purchase One Item</string>
+</resources>

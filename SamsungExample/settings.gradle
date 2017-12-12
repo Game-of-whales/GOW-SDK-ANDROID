@@ -1,0 +1,5 @@
+include ':iap4Sample'
+include ':iap4Helper'
+
+include 'com.gameofwhales.sdk'
+project(':com.gameofwhales.sdk').projectDir = new File('../sdk')

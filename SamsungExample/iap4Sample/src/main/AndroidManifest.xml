@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gameofwhales.gow"
+    android:versionCode="4000000"
+    android:versionName="4.000000" >
+
+    <uses-permission android:name="com.sec.android.app.billing.permission.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <uses-sdk
+        android:minSdkVersion="10" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/isa_samsungapps_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.CachedInboxListActivity"
+            android:label="Cached Inbox List"
+            android:configChanges="orientation|screenSize"/>
+
+        <activity
+            android:name=".activity.InboxListActivity"
+            android:label="Inbox List"
+            android:configChanges="orientation|screenSize"/>
+        
+        <activity
+            android:name=".activity.ItemListActivity"
+            android:label="Item List"
+            android:configChanges="orientation|screenSize"/>
+        
+        
+        <!-- IAP 라이브러리 내 Activity 선언 시작-->
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.InboxActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize"/>
+        
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.PaymentActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize"/>
+        
+        <activity
+            android:name="com.samsung.android.sdk.iap.lib.activity.ItemActivity"
+            android:theme="@style/Theme.Empty"
+            android:configChanges="orientation|screenSize"/>
+        <!-- IAP 라이브러리 내 Activity 선언 끝-->
+        
+    </application>
+
+</manifest>
