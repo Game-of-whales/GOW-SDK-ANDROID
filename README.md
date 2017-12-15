@@ -1,6 +1,6 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.10/com.gameofwhales.sdk-2.0.10.aar )
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
 
 
 # Changelog
@@ -29,7 +29,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.10@aar'
+       compile 'com.gameofwhales:sdk:2.0.9@aar'
 ```
 
 ### Step 2
@@ -80,7 +80,7 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
 
 
         @Override
-        public void onPushDelivered(SpecialOffer offer, String campID, String title, String message) 
+        public void onPushDelivered(String campID, String title, String message) 
         {
            //It's called to show notification in opened game.
         }
@@ -192,7 +192,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```java
       
       @Override
-      public void onPushDelivered(SpecialOffer offer, String campID, String title, String message) 
+      public void onPushDelivered(String campID, String title, String message) 
       {
       		//Show the notification to a player and then call the following method
         	GameOfWhales.PushReacted(campID);
