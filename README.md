@@ -1,6 +1,6 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
+[<img src=https://github.com/Game-of-whales/GOW-SDK-UNITY/wiki/img/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.9/com.gameofwhales.sdk-2.0.9.aar )
 
 
 # Changelog
