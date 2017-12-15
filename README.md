@@ -4,14 +4,6 @@ Game of whales Android Native SDK
 
 
 # Changelog
-### 2.0.10
-
-MODIFIED
-* Push notification about special offer comes at the same time with the special offer (new parameter _offer_ was added):
-``void onPushDelivered(SpecialOffer offer, String campID, String title, String message);``
-
-* ``setPushNotificationsEnable`` method was added to allow user to turn off the push notifications.
-
 
 ### 2.0.9
 
