@@ -131,8 +131,21 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
 ```
 
 
+### Step 6 (only if you use Samsung purchases)
 
-### Step 6 (Special Offers)
+```java
+	String purchaseID = _purchaseVo.getPurchaseId();
+        String paymentID = _purchaseVo.getPaymentId();
+        String currency = _purchaseVo.getCurrencyCode();
+        double price = _purchaseVo.getItemPrice().doubleValue();
+        String sku = _purchaseVo.getItemId();
+        String receipt = GameOfWhales.BuildSamsungReceipt(paymentID, purchaseID);
+
+        GameOfWhales.InAppPurchased(sku, price, currency, paymentID, receipt);
+```
+
+
+### Step 7 (Special Offers)
 
 In order to receive special offer call the following method:
 ```java
@@ -156,7 +169,7 @@ Special offer can also influence count (count of coins, for example) which a pla
 ```
 
 
-### Step 7 (push notifications)
+### Step 8 (push notifications)
 Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _ANDROID_BUNDLE_IDENTIFIER_.
 
 ```cs
@@ -173,7 +186,7 @@ Add a receiver to send  information about notifications to your manifest and spe
      </application>
 ```
 
-### Step 8 (only if push notifications are shown inside your app by using the game's code)
+### Step 9 (only if push notifications are shown inside your app by using the game's code)
 
 In order to send the information to **Game of Whales** regarding a player's reaction on a push notification (to increase push campaign's [_Reacted_](http://www.gameofwhales.com/documentation/processing-pushes) field) of an already started app call the following method: 
 ```java
@@ -187,7 +200,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```
 
 
-### Step 9 (only if you use Google Cloud Messaging)
+### Step 10 (only if you use Google Cloud Messaging)
 Call the following method: 
 
 ```java
@@ -199,7 +212,7 @@ Check that the following library have been added to your Android project in grad
 ```
 
 
-### Step 10 (profiles) 
+### Step 11 (profiles) 
 
 ``Profile`` method should be called if key parameters of your app or a player have changed.
 
@@ -214,7 +227,7 @@ For example:
         GameOfWhales.Profile(changes);
 ```
 
-### Step 11 (converting)
+### Step 12 (converting)
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
