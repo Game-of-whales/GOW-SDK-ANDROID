@@ -147,6 +147,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
         GameOfWhales.InAppPurchased(sku, price, currency, paymentID, receipt);
 ```
 
+> You can find an example of using the SDK for Samsung [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/SamsungExample).
+
 
 ### Step 7 (Special Offers)
 
