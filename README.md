@@ -1,6 +1,6 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.11/com.gameofwhales.sdk-2.0.11.aar )
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.11/com.gameofwhales.sdk-2.0.11.1.aar )
 
 
 # Changelog
@@ -32,7 +32,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.11@aar'
+       compile 'com.gameofwhales:sdk:2.0.11.1@aar'
 ```
 
 ### Step 2
