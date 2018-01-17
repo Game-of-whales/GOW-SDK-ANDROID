@@ -223,6 +223,8 @@ In order to enable or disable push notifications, use the following method:
 	GameOfWhales.SetPushNotificationsEnable(false);
 ```
 
+In order to check notifications implementation send [a test notification](http://www.gameofwhales.com/documentation/how-send-test-push-notification).
+
 ### Step 12 (profiles) 
 
 ``Profile`` method should be called if key parameters of your app or a player have changed.
