@@ -152,6 +152,9 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
 
 ### Step 7 (Special Offers)
 
+Before any product can be used in a special offer it has to be bought by someone after SDK has been implemented into the game. Please make sure your game has at least one purchase of the product that is going to be used in the special offer.
+If you want to create a special offer for in game resource, please, make sure your game has at least one _converting_ event with the appropriate resource (the quantity of the resource in the event should be 1).
+
 In order to receive special offer call the following method:
 ```java
 	SpecialOffer so = GameOfWhales.GetSpecialOffer(itemID);
