@@ -5,18 +5,18 @@ Game of whales Android Native SDK
 
 # Changelog
 
-### 2.0.11
+### 2.0.11 (Dec 20, 2017)
 FIXED
 * _pushDelivered_ event could be sent twice.
 
-### 2.0.10
+### 2.0.10 (Dec 20, 2017)
 MODIFIED
 * Push notification about special offer comes at the same time with the special offer (new parameter _offer_ was added):
 _void onPushDelivered(SpecialOffer offer, String campID, String title, String message)_;
 
 * _setPushNotificationsEnable_ method was added to allow user to turn off the push notifications.
 
-### 2.0.9
+### 2.0.9 (Nov 21, 2017)
 
 MODIFIED
 * _store_ parameter was added to initializing.
