@@ -265,12 +265,16 @@ You can also use the following methods:
 ```java
 	GameOfWhales.Consume("coins", 1000, "gas", 50, "shop");
 ```
+It means that someone spent 1000 "coins" for 50 "gas" in "shop".
+
 
 ``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
 
 ```java
 	GameOfWhales.Acquire("coins", 1000, sku, 1, "bank");
 ```
+It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
+
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
