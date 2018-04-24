@@ -178,7 +178,7 @@ Special offer can also influence count (count of coins, for example) which a pla
 
 
 ### Step 8 (push notifications)
-Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _ANDROID_BUNDLE_IDENTIFIER_.
+Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _APP_BUNDLE_.
 
 ```cs
      <receiver
@@ -186,13 +186,15 @@ Add a receiver to send  information about notifications to your manifest and spe
         android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-               <category android:name="ANDROID_BUNDLE_IDENTIFIER"/>
+               <category android:name="APP_BUNDLE"/>
             </intent-filter>
         </receiver>
      
      ...
      </application>
 ```
+
+>It is necessary to replace APP_BUNDLE in all places of the manifest where it's specified.
 
 ### Step 9 (only if push notifications are shown inside your app by using the game's code)
 
