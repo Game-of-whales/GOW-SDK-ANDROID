@@ -100,6 +100,9 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
     };
 ```
 	
+### Purchases
+
+>Check that *Android Bundle Identifier* and *Android Public License Key* have been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 	
 ### Step 5 (only if you use in-app purchases) 
 Add the following line to the code when you get in-app details:
@@ -232,7 +235,11 @@ In order to check notifications implementation send [a test notification](http:/
 
 ### Step 12 (profiles) 
 
-``Profile`` method should be called if key parameters of your app or a player have changed.
+You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
+
+>If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
+
+>If the length of a string-type property is more than 64 characters, **Game of Whales** will save only the first 64 characters.
 
 For example:
 
