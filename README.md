@@ -1,9 +1,27 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.11/com.gameofwhales.sdk-2.0.11.1.aar )
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.13.2/com.gameofwhales.sdk-2.0.13.2.aar)
 
 
 # Changelog
+
+### 2.0.13.2 (May 15,2018)
+FIXED
+* Usage of *Store* parameter was fixed.
+
+### 2.0.13.0 (May 15,2018)
+ADDED
+* Custom data is supported for special offers.
+
+FIXED
+* Sometimes events from apps could not be sent to **Game of Whales** server.
+
+
+### 2.0.12 (May 14, 2018)
+ADDED
+* The new *Google Play Billing* is supported.
+* The information about a device's locale is sent to **Game of Whales**.
+
 
 ### 2.0.11 (Dec 20, 2017)
 FIXED
@@ -32,7 +50,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.11.1@aar'
+       compile 'com.gameofwhales:sdk:2.0.13.2@aar'
 ```
 
 ### Step 2
@@ -179,6 +197,12 @@ Special offer can also influence count (count of coins, for example) which a pla
 	}
 ```
 
+It's possible to pass [custom data](https://www.gameofwhales.com/documentation/custom-data) to special offers. In order to get the data in game's side, use _customValues_ parameter of  _SpecialOffer_ class.
+```java
+       String str = specialOffer.customValues.get("your_str").toString();
+       Integer number = Integer.valueOf(specialOffer.customValues.get("your_int").toString());
+       Boolean bool = Boolean.valueOf(specialOffer.customValues.get("your_bool").toString());
+```
 
 ### Step 8 (push notifications)
 Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _APP_BUNDLE_.
