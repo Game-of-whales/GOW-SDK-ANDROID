@@ -122,7 +122,7 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
 
 >Check that *Android Bundle Identifier* and *Android Public License Key* have been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
 	
-### Step 5 (only if you use in-app purchases) 
+### Step 5.1 (only if you use old Google Billing) 
 Add the following line to the code when you get in-app details:
 ```java
 Bundle details = null;
@@ -154,6 +154,26 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
         	GameOfWhales.InAppPurchased(data);
 ```
 
+### Step 5.2 (only if you use new version of Google Play Billing)
+
+Add the following line to the code when you get in-app details:
+```java
+ @Override
+ public void onSkuDetailsResponse(int responseCode, List<SkuDetails> skuDetailsList) {
+        for (SkuDetails d : skuDetailsList)
+        {
+              GameOfWhales.DetailsFromString(d.toString());
+
+```
+And add the following line to _onPurchasesUpdated_ for successful purchase:
+```java
+ @Override
+ public void onPurchasesUpdated(int responseCode, @Nullable List<Purchase> purchases) {
+	if (responseCode == BillingClient.BillingResponse.OK && purchases != null) {
+            	for (Purchase purchase : purchases) {
+			GameOfWhales.InAppPurchased(purchase.getOriginalJson(), purchase.getSignature());
+```
+
 
 ### Step 6 (only if you use Samsung purchases)
 
@@ -169,6 +189,12 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data)
 ```
 
 > You can find an example of using the SDK for Samsung [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/SamsungExample).
+
+>If you can use the previous methods for purchases, you can use ``inAppPurchased`` method with the following parameters: 
+```java
+	String receipt = BuildGooglePlayReceipt(originalJson, signature);
+	inAppPurchased(sku, price, currency, transactionID, receipt.toString());
+```
 
 
 ### Step 7 (Special Offers)
