@@ -43,7 +43,7 @@ dependencies {
     //FOR GCM
     //compile 'com.google.android.gms:play-services-gcm:11.0.1'
 
-    compile 'com.gameofwhales:sdk:2.0.12@aar'
+    compile 'com.gameofwhales:sdk:2.0.14@aar'
 
 }
 
