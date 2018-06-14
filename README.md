@@ -1,9 +1,20 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.13.2/com.gameofwhales.sdk-2.0.13.2.aar)
+[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.15/com.gameofwhales.sdk-2.0.15.aar)
 
 
 # Changelog
+
+**2.0.15 (Jun 14, 2018)**
+FIXED
+
+* Push notifications were not supported for Android 8 +.
+
+
+**2.0.14 (Jun 14, 2018)**
+ADDED
+
+* ```redeemable``` parameter was added to ```SpecialOffer``` class.
 
 ### 2.0.13.2 (May 15,2018)
 FIXED
@@ -50,7 +61,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.13.2@aar'
+       compile 'com.gameofwhales:sdk:2.0.15@aar'
 ```
 
 ### Step 2
