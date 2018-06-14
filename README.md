@@ -4,23 +4,23 @@ Game of whales Android Native SDK
 
 
 # Changelog
-
-**2.0.15 (Jun 14, 2018)**
+ 
+### 2.0.15 (Jun 14, 2018)
 FIXED
 
 * Push notifications were not supported for Android 8 +.
 
 
-**2.0.14 (Jun 14, 2018)**
+### 2.0.14 (Jun 14, 2018)
 ADDED
 
 * ```redeemable``` parameter was added to ```SpecialOffer``` class.
 
-### 2.0.13.2 (May 15,2018)
+### 2.0.13.2 (May 15, 2018)
 FIXED
 * Usage of *Store* parameter was fixed.
 
-### 2.0.13.0 (May 15,2018)
+### 2.0.13.0 (May 15, 2018)
 ADDED
 * Custom data is supported for special offers.
 
