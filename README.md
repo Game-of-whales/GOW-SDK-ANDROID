@@ -298,6 +298,8 @@ In order to check notifications implementation send [a test notification](http:/
 
 You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
 
+>In order to work with AI offers you should send at least 5 number-type properties and at least one progress based parameter.
+
 >If you send more than 3000 properties, **Game of Whales** will sort all properties alphabetically and will save only the first 3000.
 
 >If the length of a string-type property is more than 64 characters, **Game of Whales** will save only the first 64 characters.
