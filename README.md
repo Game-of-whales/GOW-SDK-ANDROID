@@ -207,8 +207,8 @@ And add the following line to _onPurchasesUpdated_ for successful purchase:
 	inAppPurchased(sku, price, currency, transactionID, receipt.toString());
 ```
 
-
-### Step 7 (Special Offers)
+### Special Offers
+### Step 7
 
 Before any product can be used in a special offer it has to be bought by someone after SDK has been implemented into the game. Please make sure your game has at least one purchase of the product that is going to be used in the special offer.
 If you want to create a special offer for in game resource, please, make sure your game has at least one _converting_ event with the appropriate resource.
@@ -241,8 +241,10 @@ It's possible to pass [custom data](https://www.gameofwhales.com/documentation/c
        Boolean bool = Boolean.valueOf(specialOffer.customValues.get("your_bool").toString());
 ```
 
-### Step 8 (push notifications)
-Add a receiver to send  information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _APP_BUNDLE_.
+
+### Push notifications
+### Step 8
+Add a receiver to send information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _APP_BUNDLE_.
 
 ```cs
      <receiver
@@ -258,9 +260,43 @@ Add a receiver to send  information about notifications to your manifest and spe
      </application>
 ```
 
->It is necessary to replace APP_BUNDLE in all places of the manifest where it's specified.
+### Step 9
+Add the next permissions to your manifest and specify your _Android Bundle Identifier_ instead _APP_BUNDLE_.
 
-### Step 9 (only if push notifications are shown inside your app by using the game's code)
+```cs
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<permission android:name="APP_BUNDLE.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+<uses-permission android:name="APP_BUNDLE.permission.C2D_MESSAGE" />
+```
+
+> If you haven't had an android manifest in your project yet, you can use _GOWAndroidManifest.xml_ from SDK, but you need renaming of it to _AndroidManifest.xml_ and replace _APP_BUNDLE_ to your _Android Bundle Identifier_ wherever it is defined.
+
+
+### Step 10
+Register your project in the [Firebase console](http://www.gameofwhales.com/documentation/firebase-settings).
+
+**If you use _Google Cloud Messaging_**:
+
+Call the following method: 
+
+```java
+	GameOfWhales.SetAndroidProjectID(PROJECT_NUMBER);//or SenderID
+```
+Check that the following library have been added to your Android project in gradle file:
+```java
+	compile 'com.google.android.gms:play-services-gcm:xxx'
+```
+
+**If you use _Firebase Cloud Messaging_**:
+
+Call the following method: 
+
+```java
+	GameOfWhales.UpdateToken(FirebaseInstanceId.getInstance().getToken(), GameOfWhales.PROVIDER_FCM);
+```
+
+
+### Step 11 (only if push notifications are shown inside your app by using the game's code)
 
 In order to send the information to **Game of Whales** regarding a player's reaction on a push notification (to increase push campaign's [_Reacted_](http://www.gameofwhales.com/documentation/processing-pushes) field) of an already started app call the following method: 
 ```java
@@ -274,18 +310,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```
 
 
-### Step 10 (only if you use Google Cloud Messaging)
-Call the following method: 
-
-```java
-	GameOfWhales.SetAndroidProjectID(PROJECT_NUMBER);//or SenderID
-```
-Check that the following library have been added to your Android project in gradle file:
-```java
-	compile 'com.google.android.gms:play-services-gcm:xxx'
-```
-### Step 11
-
+### Step 12
 In order to enable or disable push notifications, use the following method:
 
 ```java
@@ -294,7 +319,9 @@ In order to enable or disable push notifications, use the following method:
 
 In order to check notifications implementation send [a test notification](http://www.gameofwhales.com/documentation/how-send-test-push-notification).
 
-### Step 12 (profiles) 
+
+### Profiles
+### Step 13 
 
 You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
 
@@ -315,7 +342,9 @@ For example:
         GameOfWhales.Profile(changes);
 ```
 
-### Step 13 (converting)
+
+### Converting
+### Step 14
 
 ``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
 
