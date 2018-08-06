@@ -289,6 +289,8 @@ Check that the following library have been added to your Android project in grad
 
 **If you use _Firebase Cloud Messaging_**:
 
+[Add Firebase](https://firebase.google.com/docs/cloud-messaging/) to your project.
+
 Call the following method during the starting of your game when _Firebase_ has already been initialized: 
 
 ```java
