@@ -1,6 +1,6 @@
 Game of whales Android Native SDK
 
-[ ![Download](https://api.bintray.com/packages/gameofwhales/maven/sdk/images/download.svg) ](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.16/com.gameofwhales.sdk-2.0.16.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.16/com.gameofwhales.sdk-2.0.16.aar)
 
 
 # Changelog
@@ -59,6 +59,14 @@ MODIFIED
 
 
 # Implementation Guide
+
+The SDK will ask the following permissions on the user's device:
+```java
+    <uses-permission android:name=“android.permission.ACCESS_NETWORK_STATE” />
+    <uses-permission android:name=“android.permission.INTERNET” />
+    <uses-permission android:name=“android.permission.WAKE_LOCK” />
+```
+
 
 Implement the SDK to your project.
 
