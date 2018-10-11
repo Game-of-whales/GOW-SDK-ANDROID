@@ -142,7 +142,14 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
         }
     };
 ```
-	
+
+The verify state can be:
+
+* _VERIFY_STATE_LEGAL_ - a purchase is normal.
+* _VERIFY_STATE_ILLEGAL_ - a purchase is a cheater's.
+* _VERIFY_STATE_UNDEFINED_ - GOW server couldn't define the state of a purchase. 
+
+
 ### Purchases
 
 >Check that *Android Bundle Identifier* and *Android Public License Key* have been filled on [*Game Settings*](https://www.gameofwhales.com/documentation/game#game-settings) page before you will make a purchase.
