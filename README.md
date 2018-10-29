@@ -1,10 +1,16 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.16/com.gameofwhales.sdk-2.0.16.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.19/com.gameofwhales.sdk-2.0.19.aar)
 
 
 # Changelog
  
+### 2.0.19 (Oct 29, 2018)
+FIXED
+
+* Sometimes events (for example, ```pushDelivered```) were not sent to **GOW server**. The issue was fixed.
+
+
 ### 2.0.16 (Aug 06, 2018)
 FIXED
 
@@ -75,7 +81,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.16@aar'
+       compile 'com.gameofwhales:sdk:2.0.19@aar'
 ```
 
 ### Step 2
