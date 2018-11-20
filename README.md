@@ -406,6 +406,62 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
 
 
+### Ads
+> It will be supported since version 2.0.20 of SDK for Android.
+
+To handle the ads set in **Game of Whales**, you need to do some actions:
+
+### Step 15
+
+Subscribe to the following events to get the information about the current state of the ads by using ``GameOfWhalesListener`` class:
+
+```java
+private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
+
+        ...
+	
+        @Override
+        public void onAdLoaded() {
+            
+        }
+
+        @Override
+        public void onAdLoadFailed() {
+           
+        }
+
+        @Override
+        public void onAdClosed() {
+            
+        }
+	
+	...
+    };
+```
+
+### Step 16
+
+Start to load the ads at any place of your code (for example, during the launch of the game):
+
+```java
+	GameOfWhales.LoadAd();    
+```
+
+### Step 17
+
+Add the following code to the part of your game where you want to show the ads:
+
+```java
+    if (GameOfWhales.IsAdLoaded())
+    {
+	GameOfWhales.ShowAd();
+    }
+    else
+    {
+	GameOfWhales.LoadAd();
+    }
+```
+
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
 
