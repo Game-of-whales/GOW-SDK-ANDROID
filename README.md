@@ -1,10 +1,16 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.19/com.gameofwhales.sdk-2.0.19.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.20/com.gameofwhales.sdk-2.0.20.aar)
 
 
 # Changelog
- 
+
+### 2.0.20 (Nov 20, 2018)
+ADDED
+
+* The supporting of ads was added.
+
+
 ### 2.0.19 (Oct 29, 2018)
 FIXED
 
@@ -407,7 +413,7 @@ It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
 
 
 ### Ads
-> It will be supported since version 2.0.20 of SDK for Android.
+> It's supported since version 2.0.20 of SDK for Android.
 
 To handle the ads set in **Game of Whales**, you need to do some actions:
 
