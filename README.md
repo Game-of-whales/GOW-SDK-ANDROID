@@ -87,7 +87,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.19@aar'
+       compile 'com.gameofwhales:sdk:2.0.20@aar'
 ```
 
 ### Step 2
