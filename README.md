@@ -8,7 +8,7 @@ Game of whales Android Native SDK
 ### 2.0.20 (Nov 20, 2018)
 ADDED
 
-* The supporting of ads was added.
+* The supporting of cross promotion ads was added.
 
 
 ### 2.0.19 (Oct 29, 2018)
@@ -412,7 +412,7 @@ It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
 
 
-### Ads
+### Cross promotion ads
 > It's supported since version 2.0.20 of SDK for Android.
 
 To handle the ads set in **Game of Whales**, you need to do some actions:
