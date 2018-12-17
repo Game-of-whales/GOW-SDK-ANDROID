@@ -1,9 +1,17 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.20/com.gameofwhales.sdk-2.0.20.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.21/com.gameofwhales.sdk-2.0.21.aar)
 
 
 # Changelog
+
+
+### 2.0.21 (Dec 17, 2018)
+FIXED
+
+* The handling of errors was improved.
+
+
 
 ### 2.0.20 (Nov 20, 2018)
 ADDED
@@ -87,7 +95,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.20@aar'
+       compile 'com.gameofwhales:sdk:2.0.21@aar'
 ```
 
 ### Step 2
