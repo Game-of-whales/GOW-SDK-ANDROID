@@ -144,8 +144,11 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
             Log.i(TAG, "onSpecialOfferDisappeared: " + specialOffer.toString());
         }
 
-
         @Override
+        public void onFutureSpecialOfferAppeared(SpecialOffer specialOffer) {
+        }
+	
+	@Override
         public void onPushDelivered(SpecialOffer offer, String campID, String title, String message) 
         {
            //It's called to show notification in opened game.
