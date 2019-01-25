@@ -8,7 +8,7 @@ Game of whales Android Native SDK
 ### 2.0.22 (Jan 25, 2019)
 ADDED
 
-* The supporting of future (anti-churn) special offers were added.
+* The supporting of [future (anti-churn) special offers](https://www.gameofwhales.com/documentation/anti-churn-offers) were added.
 * The possibility of getting a profile's properties was added.
 
 
