@@ -1,9 +1,16 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.21/com.gameofwhales.sdk-2.0.21.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.22/com.gameofwhales.sdk-2.0.23.aar)
 
 
 # Changelog
+
+### 2.0.22 (Jan 25, 2019)
+ADDED
+
+* The supporting of future (anti-churn) special offers were added.
+* The possibility of getting a profile's properties was added.
+
 
 
 ### 2.0.21 (Dec 17, 2018)
@@ -95,7 +102,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.21@aar'
+       compile 'com.gameofwhales:sdk:2.0.22@aar'
 ```
 
 ### Step 2
@@ -478,6 +485,31 @@ Add the following code to the part of your game where you want to show the ads:
 	GameOfWhales.LoadAd();
     }
 ```
+
+# Profile's properties
+
+### Step 18
+
+You can get some profile's properties defined on **Game of Whales** side via the SDK.
+
+For example, you can get the profile's property `group` by using the following code:
+
+```java
+JSONObject properties = GameOfWhales.GetProperties();
+String id = "group";
+if (properties.has(id))
+	{
+		String group = properties.getString(id);
+	}
+```
+
+You can also receive the profile's group by using the special method:
+
+```java
+	String group = GameOfWhales.getUserGroup();
+```
+
+
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
