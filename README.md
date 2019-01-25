@@ -82,9 +82,9 @@ MODIFIED
 
 The SDK will ask the following permissions on the user's device:
 ```java
-    <uses-permission android:name=“android.permission.ACCESS_NETWORK_STATE” />
-    <uses-permission android:name=“android.permission.INTERNET” />
-    <uses-permission android:name=“android.permission.WAKE_LOCK” />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
 
