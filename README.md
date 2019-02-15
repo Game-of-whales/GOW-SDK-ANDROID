@@ -1,9 +1,15 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.22/com.gameofwhales.sdk-2.0.22.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.23/com.gameofwhales.sdk-2.0.23.aar)
 
 
 # Changelog
+
+### 2.0.23 (Feb 15, 2019)
+
+* Minor fixes.
+
+
 
 ### 2.0.22 (Jan 25, 2019)
 ADDED
