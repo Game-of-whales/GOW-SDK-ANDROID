@@ -409,7 +409,7 @@ If you are going to use [AI offers](https://www.gameofwhales.com/documentation/a
 
 
 For example:
-Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
+Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method to reflect this operation in **Game of Whales**:
 
 ```java
 	Map<String, Long> resources = new HashMap<>();
@@ -441,7 +441,7 @@ For example:
 It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 
 
-``Acquire`` -  to show that a player acquires a certain amount of one resource and spends a quantity of another resource. The method can be used for _in-app_ and _in game_ items. It's important to call ``acquire`` method after ``InAppPurchased``.
+``Acquire`` -  to show that a player acquires a certain amount of one resource and spends a quantity of another resource. The method can be used for _in-app_ and _in game_ items. It's important to call ``Acquire`` method after ``InAppPurchased``.
 
 For example:
 
@@ -450,7 +450,7 @@ For example:
 ```
 It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
 
-``Consume`` and ``Acquire`` methods can be called when one resource is changed to another resource. In more complicated cases (for example, when one recource is spent for several types of resources) ``Converting`` method should be called.
+``Consume`` and ``Acquire`` methods can be called when one resource is changed to another resource. In more complicated cases (for example, when one resource is spent for several types of resources) ``Converting`` method should be called.
 
 
 ### Cross promotion ads
