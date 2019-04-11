@@ -405,7 +405,8 @@ For example:
 ### Converting
 ### Step 14
 
-``Converting`` method should be called when you buy or get some in-game objects, coins, currency, etc.
+If you are going to use [AI offers](https://www.gameofwhales.com/documentation/ai-offers) functionality you need to send to **Game of Whales** information about players' game activity by using ``Converting`` method. ``Converting`` method should be called to show what exactly the player spent and what he got instead of spent resources. [Read more...](https://www.gameofwhales.com/documentation/ai-offers#aiData)
+
 
 For example:
 Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the following method for this purchase:
@@ -418,9 +419,21 @@ Someone bought one _bike_1_ for _1000_ coins and _50_ gas. You should call the f
         GameOfWhales.Converting(resources, place);
 ```
 
-You can also use the following methods:
+Another sample: someone bought a main pack for $5. It was in-app purchase with _mainPack_ SKU. The pack included _100 coins_ and _1 bike_. In order to send the data that the player got _100 coins_ and _1 bike_ after the purchase of _mainPack_ to **Game of Whales**, the following ``Converting`` method should be called:
 
-``Consume`` - to buy items for game currency. For example:
+```java
+	Map<String, Long> resources = new HashMap<>();
+        resources.put("bike", 1);
+	resources.put("coin", 100);
+        resources.put("mainPack", -1);
+        GameOfWhales.Converting(resources, place);
+```
+
+There are 2 additional methods that can be used instead of ```Converting``` method:
+
+``Consume`` - to show that a player spends a certain amount of one resource for the purchase of a quantity of another resource.
+
+For example:
 
 ```java
 	GameOfWhales.Consume("coins", 1000, "gas", 50, "shop");
@@ -428,12 +441,16 @@ You can also use the following methods:
 It means that someone spent 1000 "coins" for 50 "gas" in "shop".
 
 
-``Acquire`` - for in-app purchases. It's important to call ``acquire`` method after ``InAppPurchased``. For example:
+``Acquire`` -  to show that a player acquires a certain amount of one resource and spends a quantity of another resource. The method can be used for _in-app_ and _in game_ items. It's important to call ``acquire`` method after ``InAppPurchased``.
+
+For example:
 
 ```java
 	GameOfWhales.Acquire("coins", 1000, sku, 1, "bank");
 ```
 It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
+
+``Consume`` and ``Acquire`` methods can be called when one resource is changed to another resource. In more complicated cases (for example, when one recource is spent for several types of resources) ``Converting`` method should be called.
 
 
 ### Cross promotion ads
