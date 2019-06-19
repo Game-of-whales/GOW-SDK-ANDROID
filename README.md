@@ -166,6 +166,11 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
         {
            //It's called to show notification in opened game.
         }
+	
+	@Override
+	public void onInitialized() {
+	 //It's needed just if you want to get information that the SDK has been initialized.
+	}
 
         @Override
         public void onPurchaseVerified(final String transactionID, final String state) {
@@ -258,14 +263,31 @@ And add the following line to _onPurchasesUpdated_ for successful purchase:
 
 > You can find an example of using the SDK for Samsung [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/SamsungExample).
 
->If you can use the previous methods for purchases, you can use ``inAppPurchased`` method with the following parameters: 
+>If you can't use the previous methods for purchases, you can use ``inAppPurchased`` method with the following parameters: 
 ```java
 	String receipt = BuildGooglePlayReceipt(originalJson, signature);
 	inAppPurchased(sku, price, currency, transactionID, receipt.toString());
 ```
 
+### Step 7 (purchases without verification on GOW side)
+
+> The method is available since v.2.0.24 SDK version
+
+In order to send information about purchases without verification on **Game of Whales** side, call `Purchase` method. For example:
+
+```java
+	String product = "product_10";
+        String currency = "USD";
+        double price = 1.99;
+        
+        GameOfWhales.Purchase(product, currency, price * 100);
+```
+
+> Pay attention that all purchases received through `Purchase` method (including refunds, restores, cheater's purchases) will increase the stats. So in order to have correct stats, a game developer should verify purchases on the game side and send the data only about legal purchases to **Game of Whales** system.
+
+
 ### Special Offers
-### Step 7
+### Step 8
 
 Before any product can be used in a special offer it has to be bought by someone after SDK has been implemented into the game. Please make sure your game has at least one purchase of the product that is going to be used in the special offer.
 If you want to create a special offer for in game resource, please, make sure your game has at least one _converting_ event with the appropriate resource.
@@ -300,7 +322,7 @@ It's possible to pass [custom data](https://www.gameofwhales.com/documentation/c
 
 
 ### Push notifications
-### Step 8
+### Step 9
 Add a receiver to send information about notifications to your manifest and specify your [_Android Bundle Identifier_](http://www.gameofwhales.com/documentation/android-settings) instead _APP_BUNDLE_.
 
 ```cs
@@ -317,7 +339,7 @@ Add a receiver to send information about notifications to your manifest and spec
      </application>
 ```
 
-### Step 9
+### Step 10
 Add the next permissions to your manifest and specify your _Android Bundle Identifier_ instead _APP_BUNDLE_.
 
 ```cs
@@ -329,7 +351,7 @@ Add the next permissions to your manifest and specify your _Android Bundle Ident
 > If you haven't had an android manifest in your project yet, you can use _GOWAndroidManifest.xml_ from SDK, but you need renaming of it to _AndroidManifest.xml_ and replace _APP_BUNDLE_ to your _Android Bundle Identifier_ wherever it is defined.
 
 
-### Step 10
+### Step 11
 Register your project in the [Firebase console](http://www.gameofwhales.com/documentation/firebase-settings).
 
 **If you use _Google Cloud Messaging_**:
@@ -355,7 +377,7 @@ Call the following method during the starting of your game when _Firebase_ has a
 ```
 
 
-### Step 11 (only if push notifications are shown inside your app by using the game's code)
+### Step 12 (only if push notifications are shown inside your app by using the game's code)
 
 In order to send the information to **Game of Whales** regarding a player's reaction on a push notification (to increase push campaign's [_Reacted_](http://www.gameofwhales.com/documentation/processing-pushes) field) of an already started app call the following method: 
 ```java
@@ -369,7 +391,7 @@ In order to send the information to **Game of Whales** regarding a player's reac
 ```
 
 
-### Step 12
+### Step 13
 In order to enable or disable push notifications, use the following method:
 
 ```java
@@ -380,7 +402,7 @@ In order to check notifications implementation send [a test notification](http:/
 
 
 ### Profiles
-### Step 13 
+### Step 14 
 
 You can send additional data about your players by using the ``Profile`` method. ``Profile`` method should be called if key parameters of your app or a player have changed.
 
@@ -403,7 +425,7 @@ For example:
 
 
 ### Converting
-### Step 14
+### Step 15
 
 If you are going to use [AI offers](https://www.gameofwhales.com/documentation/ai-offers) functionality you need to send to **Game of Whales** information about players' game activity by using ``Converting`` method. ``Converting`` method should be called to show what exactly the player spent and what he got instead of spent resources. [Read more...](https://www.gameofwhales.com/documentation/ai-offers#aiData)
 
@@ -458,7 +480,7 @@ It means that someone has acquired 10000 "coins" for 1 "sku" in "bank".
 
 To handle the ads set in **Game of Whales**, you need to do some actions:
 
-### Step 15
+### Step 16
 
 Subscribe to the following events to get the information about the current state of the ads by using ``GameOfWhalesListener`` class:
 
@@ -486,7 +508,7 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
     };
 ```
 
-### Step 16
+### Step 17
 
 Start to load the ads at any place of your code (for example, during the launch of the game):
 
@@ -494,7 +516,7 @@ Start to load the ads at any place of your code (for example, during the launch 
 	GameOfWhales.LoadAd();    
 ```
 
-### Step 17
+### Step 18
 
 Add the following code to the part of your game where you want to show the ads:
 
@@ -511,7 +533,7 @@ Add the following code to the part of your game where you want to show the ads:
 
 # Profile's properties
 
-### Step 18
+### Step 19
 
 You can get some profile's properties defined on **Game of Whales** side via the SDK.
 
