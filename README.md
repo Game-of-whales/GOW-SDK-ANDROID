@@ -1,9 +1,17 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.23/com.gameofwhales.sdk-2.0.23.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.24/com.gameofwhales.sdk-2.0.24.aar)
 
 
 # Changelog
+
+### 2.0.24 (Jun 19, 2019)
+
+**ADDED**
+
+* `onInitialized` callback was added. It should be used to get information that the SDK has been initialized.
+* `Purchase` method was added to register purchases without verification.
+
 
 ### 2.0.23 (Feb 15, 2019)
 
@@ -108,7 +116,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.22@aar'
+       compile 'com.gameofwhales:sdk:2.0.24@aar'
 ```
 
 ### Step 2
