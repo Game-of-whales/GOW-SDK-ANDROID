@@ -1,13 +1,26 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.24/com.gameofwhales.sdk-2.0.24.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.26/com.gameofwhales.sdk-2.0.26.aar)
 
 
 # Changelog
 
+
+**2.0.26 (Jun 25, 2019)**
+
+ADDED
+* GDPR support: the non-personal mode was added. 
+
+FIXED
+
+**Android**
+
+* SDK receiver doesn't handle a push notification if it has handled the push notification with the same id before.
+
+
 ### 2.0.24 (Jun 19, 2019)
 
-**ADDED**
+ADDED
 
 * `onInitialized` callback was added. It should be used to get information that the SDK has been initialized.
 * `Purchase` method was added to register purchases without verification.
@@ -116,7 +129,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.24@aar'
+       compile 'com.gameofwhales:sdk:2.0.26@aar'
 ```
 
 ### Step 2
