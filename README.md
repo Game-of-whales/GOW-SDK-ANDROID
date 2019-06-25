@@ -6,7 +6,7 @@ Game of whales Android Native SDK
 # Changelog
 
 
-**2.0.26 (Jun 25, 2019)**
+### 2.0.26 (Jun 25, 2019)
 
 ADDED
 * GDPR support: the non-personal mode was added. 
