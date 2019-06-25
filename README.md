@@ -147,6 +147,14 @@ import com.gameofwhales.sdk.SpecialOffer;
     GameOfWhales.Init(this, store, gowListener);
 ```
 
+> **GDPR NOTE**: By default, the SDK uses advertisement ID (IDFA) as a user ID to send events to **Game of Whales** server. In order to work in a non-personal mode when a random value will be used as a user ID, the SDK should be initialized as follows:
+
+```java
+	boolean nonPersonal = true;
+        GameOfWhales.Init(this, GameOfWhales.STORE_GOOGLEPLAY, null, nonPersonal);
+```
+
+
 ### Step 4
 Create new listener and add your functionality to it.
 
