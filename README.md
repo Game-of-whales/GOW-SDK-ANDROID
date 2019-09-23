@@ -588,7 +588,36 @@ You can also receive the profile's group by using the special method:
 	String group = GameOfWhales.getUserGroup();
 ```
 
+# A/B testing (experiments)
 
+>It's supported since version 2.0.29 of SDK for Android.
+
+### Step 20
+
+In order to start working with experiments, it's needed to add some methods by using _GameOfWhalesListener_ class: 
+
+
+In order to confirm that the experiment payload settings have been applied and the player should take part in the experiment, it's needed to return true:
+
+```java
+    @Override
+    public boolean CanStartExperiment(Experiment experiment)
+    {
+       //Read experiment.payload, apply changes for experiment and return True if changes were applied
+	     
+       return true;
+    }
+```
+
+When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
+
+```java
+    @Override
+    public void OnExperimentEnded(Experiment experiment)
+    {
+       //Disable experiment changes or keep them
+    }
+```
 
 
 > You can find an example of using the SDK [here](https://github.com/Game-of-whales/GOW-SDK-ANDROID/tree/master/AndroidExample).
