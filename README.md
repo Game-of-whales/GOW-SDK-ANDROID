@@ -1,9 +1,15 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.26/com.gameofwhales.sdk-2.0.26.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.29/com.gameofwhales.sdk-2.0.29.aar)
 
 
 # Changelog
+
+
+### 2.0.29 (Sep 23, 2019)
+
+ADDED
+* Supporting of ["A/B Testing"](https://www.gameofwhales.com/documentation/ab-testing) was added. 
 
 
 ### 2.0.26 (Jun 25, 2019)
@@ -129,7 +135,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.26@aar'
+       compile 'com.gameofwhales:sdk:2.0.29@aar'
 ```
 
 ### Step 2
