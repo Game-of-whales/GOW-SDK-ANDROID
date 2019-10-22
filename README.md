@@ -1,9 +1,15 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.29/com.gameofwhales.sdk-2.0.29.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.32/com.gameofwhales.sdk-2.0.32.aar)
 
 
 # Changelog
+
+
+### 2.0.32 (Oct 22, 2019)
+
+ADDED
+* [`OnConnected` callback](https://www.gameofwhales.com/documentation/android-native-sdk#gowListener) was added. 
 
 
 ### 2.0.29 (Sep 23, 2019)
@@ -135,7 +141,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.29@aar'
+       compile 'com.gameofwhales:sdk:2.0.32@aar'
 ```
 
 ### Step 2
@@ -206,6 +212,13 @@ private GameOfWhalesListener gowListener = new GameOfWhalesListener() {
 	public void onInitialized() {
 	 //It's needed just if you want to get information that the SDK has been initialized.
 	}
+	
+	@Override
+        void onConnected(boolean dataReceived){
+           //It's called after the GOW server response with 'dataReceived': true.
+           //If there was no response from the GOW server, there was an error during the request to the server 
+           //or the game is offline, 'dataReceived' is false.
+        }
 
         @Override
         public void onPurchaseVerified(final String transactionID, final String state) {
@@ -608,6 +621,10 @@ In order to confirm that the experiment payload settings have been applied and t
        return true;
     }
 ```
+
+In order to check if there is an experiment at the start of the application, subscribe to `OnConnected` callback (see _Step 4_). If the experiment exists, `CanStartExperiment` will be called before `OnConnected`. 
+
+> `OnConnected` callback is supported since 2.0.32 version of SDK.
 
 When the experiment is finished, `OnExperimentEnded` method will be called. You are able to remove all experiment changes or keep them for further work regardless of the experiment:
 
