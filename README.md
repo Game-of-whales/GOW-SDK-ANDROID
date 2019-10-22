@@ -9,7 +9,7 @@ Game of whales Android Native SDK
 ### 2.0.32 (Oct 22, 2019)
 
 ADDED
-* [`OnConnected` callback](https://www.gameofwhales.com/documentation/android-native-sdk#gowListener) was added. 
+* [`onConnected` callback](https://www.gameofwhales.com/documentation/android-native-sdk#gowListener) was added. 
 
 
 ### 2.0.29 (Sep 23, 2019)
@@ -132,6 +132,9 @@ The SDK will ask the following permissions on the user's device:
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
+
+> **NOTE about Android X**: if your project uses the libraries for _Android X_, [**download com.gameofwhales.sdkx-&lt;version&gt;.aar**](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.32/com.gameofwhales.sdkx-2.0.32.aar) library, remove **com.gameofwhales.sdk-&lt;version&gt;.aar** from your project and add **com.gameofwhales.sdkx-&lt;version&gt;.aar**. _&lt;version&gt;_ is the number of used SDK version.  
+
 
 
 Implement the SDK to your project.
