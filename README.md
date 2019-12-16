@@ -1,10 +1,17 @@
 Game of whales Android Native SDK
 
-[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.32/com.gameofwhales.sdk-2.0.32.aar)
+[<img src=https://www.gameofwhales.com/sites/default/files/documentation/download.png>](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.33/com.gameofwhales.sdk-2.0.33.aar)
 
 
 # Changelog
 
+### 2.0.33 (Dec 16, 2019)
+
+ADDED
+* The information about the player's device is sent to **Game of Whales** server. 
+
+FIXED
+* Minor fixes.
 
 ### 2.0.32 (Oct 22, 2019)
 
@@ -133,7 +140,7 @@ The SDK will ask the following permissions on the user's device:
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
-> **NOTE about Android X**: if your project uses the libraries for _Android X_, [**download com.gameofwhales.sdkx-&lt;version&gt;.aar**](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.32/com.gameofwhales.sdkx-2.0.32.aar) library, remove **com.gameofwhales.sdk-&lt;version&gt;.aar** from your project and add **com.gameofwhales.sdkx-&lt;version&gt;.aar**. _&lt;version&gt;_ is the number of used SDK version.  
+> **NOTE about Android X**: if your project uses the libraries for _Android X_, [**download com.gameofwhales.sdkx-&lt;version&gt;.aar**](https://github.com/Game-of-whales/GOW-SDK-ANDROID/releases/download/v2.0.33/com.gameofwhales.sdkx-2.0.33.aar) library, remove **com.gameofwhales.sdk-&lt;version&gt;.aar** from your project and add **com.gameofwhales.sdkx-&lt;version&gt;.aar**. _&lt;version&gt;_ is the number of used SDK version.  
 
 
 
@@ -144,7 +151,7 @@ Add the following dependencies to _build.gradle_:
 ```java
 dependencies {
 	...
-       compile 'com.gameofwhales:sdk:2.0.32@aar'
+       compile 'com.gameofwhales:sdk:2.0.33@aar'
 ```
 
 ### Step 2
